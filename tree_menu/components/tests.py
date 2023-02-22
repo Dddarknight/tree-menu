@@ -34,8 +34,10 @@ class MenuTest(TestCase):
         menu_pk = self.menu1.pk
         component_pk = self.component1_22.pk
         response = c.get(
-            reverse_lazy('tree',
-            kwargs={'menu_pk': menu_pk, 'component_pk': component_pk})
+            reverse_lazy(
+                'tree',
+                kwargs={'menu_pk': menu_pk, 'component_pk': component_pk}
+            )
         )
         self.assertContains(response, self.component1_2.name)
         self.assertContains(response, self.component1_21.name)

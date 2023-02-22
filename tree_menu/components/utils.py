@@ -25,7 +25,7 @@ def build_tree(component_pk, menu_pk):
     def inner(parent, parents_list, components):
         node = []
         for component in components:
-            if (parent == None and component.get('parent__id') is None) or (
+            if (parent is None and component.get('parent__id') is None) or (
                     parent and component.get(
                         'parent__id') == parent.get('id')):
                 if component in parents_list:
