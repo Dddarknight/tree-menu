@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    {% for menu in object_list %} 
+        <div>
+            <a href="{% url 'tree' menu.id 0 %}">{{menu.name}}</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

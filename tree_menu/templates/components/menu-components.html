@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<div id="tree" class="tree">
+    <ul>
+    {% for node in tree %} 
+        {% include "components/component.html" %}
+    {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

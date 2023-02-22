@@ -1,0 +1,15 @@
+{% load static %}
+
+<li class="tree-node">
+    <span class="indent"></span>
+    <a href="{% url 'tree' node.menu__id node.id %}">{{node.name}}</a>
+        <ul>
+            {% if node.children %}
+                {% for child in node.children %}
+                {% with node=child template_name="components/component.html" %}
+                    {% include template_name %}
+                {% endwith %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+</li>
